@@ -1,3 +1,4 @@
+package model;
 public class Notification {
     private int notificationId;
     private String sender;

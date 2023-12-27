@@ -1,3 +1,4 @@
+package controller;
 // @RestController
 // @RequestMapping("/notifications")
 public class NotificationController {

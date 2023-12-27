@@ -1,3 +1,4 @@
+package model;
 import java.util.List;
 
 // @Entity
@@ -11,4 +12,4 @@ class Customer {
     private double accountBalance;
 
     // Constructors, getters, setters, etc.
-}
+}   
