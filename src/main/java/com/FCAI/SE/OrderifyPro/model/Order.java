@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.*;
 
 class Order {
-    
-    private Long id; // orderId
+
+    private String id; // orderId
 
     // @ManyToOne
     private Customer customer;
