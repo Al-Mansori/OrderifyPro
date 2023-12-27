@@ -27,7 +27,7 @@ public class CustomerController {
     // }
 
     @PostMapping("/createAccount")
-    public Response postMethodName(@RequestBody Customer customer) {
+    public Response createAccount(@RequestBody Customer customer) {
         boolean res = customerService.addAccount(customer);
         Response response = new Response();
         if (!res) {
