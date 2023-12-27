@@ -1,10 +1,13 @@
-package model;
+package com.FCAI.SE.OrderifyPro.model;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
 import java.util.List;
 
-// @Entity
 class Customer {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     private Long id;
     // private List<Order> ordersPlaced;
     private String email;

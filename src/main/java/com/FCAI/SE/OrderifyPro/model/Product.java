@@ -1,10 +1,11 @@
-package model;
+package com.FCAI.SE.OrderifyPro.model;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.*;
 
-// @Entity
 class Product {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+  
     private Long id;
 
     private String serialNumber;
