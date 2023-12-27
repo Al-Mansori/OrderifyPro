@@ -2,7 +2,6 @@ package com.FCAI.SE.OrderifyPro.model;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import java.util.*;
 
 class Order {
