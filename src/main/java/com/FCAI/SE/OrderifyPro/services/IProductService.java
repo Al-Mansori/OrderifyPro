@@ -1,10 +1,14 @@
 package com.FCAI.SE.OrderifyPro.services;
 
-import org.apache.commons.math3.stat.descriptive.summary.Product;
+
+import java.util.List;
+
 import org.springframework.stereotype.Service;
+
+import com.FCAI.SE.OrderifyPro.model.Product;
 
 @Service
 
 public interface IProductService {
-   public Product[] getAllProducts();
+   public List<Product> getAllProducts();
 }

@@ -1,16 +1,19 @@
 package com.FCAI.SE.OrderifyPro.model;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import java.util.*;
 
-public class Customer {
+public class Account {
 
     // private String id;
     // private List<Order> ordersPlaced;
     private String email;
     private String password;
     private double accountBalance;
+
+    public Account(String email, String password, double accountBalance) {
+        this.email = email;
+        this.password = password;
+        this.accountBalance = accountBalance;
+    }
 
     public void setAccountBalance(double accountBalance) {
         this.accountBalance = accountBalance;

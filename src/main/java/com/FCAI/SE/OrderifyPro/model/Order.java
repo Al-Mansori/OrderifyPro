@@ -1,25 +1,26 @@
 package com.FCAI.SE.OrderifyPro.model;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import java.util.*;
+import java.util.UUID;
 
-public class Order {
+public abstract class Order {
+    private UUID id;
+    private Account account;
 
-    private String id; // orderId
 
-    // @ManyToOne
-    private Customer customer;
-
-    // @OneToMany
-    private List<Product> products;
-
-    // private String status;
-    // private String shippingAddress;
-    // private boolean isShipped;
-    // private double shippingFees;
-
-    // Other order details, shipping info
-
-    // Constructors, getters, setters, etc.
+    public Order(UUID id, Account account) {
+        this.id = id;
+        this.account = account;
+    }
+    public UUID getId() {
+        return id;
+    }
+    public void setId(UUID id) {
+        this.id = id;
+    }
+    public Account getAccount() {
+        return account;
+    }
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 }

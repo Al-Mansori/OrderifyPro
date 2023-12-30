@@ -1,8 +1,5 @@
 package com.FCAI.SE.OrderifyPro.model;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 public class Notification {
     private int notificationId;
     private String sender;

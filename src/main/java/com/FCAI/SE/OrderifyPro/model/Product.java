@@ -1,56 +1,25 @@
 package com.FCAI.SE.OrderifyPro.model;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import java.util.*;
-
 public class Product {
+    private ProductDefinition definition;
+    private int availableAmount;
 
-    private String serialNumber;
-    private String name;
-    private String vendor;
-    private String category;
-    private double price;
-    // private int count;
 
-    public String getCategory() {
-        return category;
+    public Product(ProductDefinition definition, int availableAmount) {
+        this.definition = definition;
+        this.availableAmount = availableAmount;
     }
-
-    public String getName() {
-        return name;
+    public ProductDefinition getDefinition() {
+        return definition;
     }
-
-    public double getPrice() {
-        return price;
+    public void setDefinition(ProductDefinition definition) {
+        this.definition = definition;
     }
-
-    public String getSerialNumber() {
-        return serialNumber;
+    public int getAvailableAmount() {
+        return availableAmount;
     }
-
-    public String getVendor() {
-        return vendor;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
-    }
-
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
+    public void setAvailableAmount(int availableAmount) {
+        this.availableAmount = availableAmount;
     }
 
 }
