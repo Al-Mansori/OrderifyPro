@@ -3,6 +3,7 @@ package com.FCAI.SE.OrderifyPro.controller;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +23,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RequestMapping("/orders")
 public class OrderController {
     IOrderService orderService;
+    CheckoutService checkoutService = new CheckoutService();
+    ShipmentService shipmentService = new ShipmentService();
 
     
 
@@ -36,23 +39,20 @@ public class OrderController {
     
 
     @PostMapping("/")
-    public Order addOrder(@RequestBody Order order) {
-        return orderService.addOrder(order);
+    public Order addOrder(@RequestBody Order order) throws BadRequestException {
+        return checkoutService.checkout(order);
     }
 
     @DeleteMapping("/{orderId}")
-    public UUID deleteOrder(@PathVariable("orderId") UUID orderId){
-        // enter logic
-
+    public UUID deleteOrder(@PathVariable("orderId") UUID orderId) throws BadRequestException{
+        checkoutService.cancelCheckout(orderId);
         return orderId;
     }
 
 
     @PostMapping("/{orderId}/ship")
-    public UUID shipOrder(@PathVariable("orderId") UUID orderId) {
-        // enter logic
-
-
+    public UUID shipOrder(@PathVariable("orderId") UUID orderId) throws BadRequestException {
+        shipmentService.ship(orderId);
         return orderId;
     }
 

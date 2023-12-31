@@ -36,4 +36,13 @@ public class SimpleOrder extends Order {
         res.put(getAccountID(), totalCost);
         return res;
     }
+
+    public Map<UUID, Integer> getQuantityPerItem () {
+        Map<UUID, Integer> res = new HashMap<>();
+        for (OrderItem item : items) {
+            res.put(item.getProduct().getDefinition().getSerialNumber(), item.getQuantity());
+        }
+
+        return res;
+    }
 }

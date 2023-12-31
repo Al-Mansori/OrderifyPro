@@ -1,15 +1,16 @@
 package com.FCAI.SE.OrderifyPro.model;
 
+import java.util.UUID;
 
 public class ProductDefinition {
 
-    private String serialNumber;
+    private UUID serialNumber;
     private String name;
     private String vendor;
     private String category;
     private double price;
 
-    public ProductDefinition(String serialNumber, String name, String vendor, String category, double price) {
+    public ProductDefinition(UUID serialNumber, String name, String vendor, String category, double price) {
         this.serialNumber = serialNumber;
         this.name = name;
         this.vendor = vendor;
@@ -29,7 +30,7 @@ public class ProductDefinition {
         return price;
     }
 
-    public String getSerialNumber() {
+    public UUID getSerialNumber() {
         return serialNumber;
     }
 
@@ -49,7 +50,7 @@ public class ProductDefinition {
         this.price = price;
     }
 
-    public void setSerialNumber(String serialNumber) {
+    public void setSerialNumber(UUID serialNumber) {
         this.serialNumber = serialNumber;
     }
 

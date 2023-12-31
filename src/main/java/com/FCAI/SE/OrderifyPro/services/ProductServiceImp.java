@@ -17,4 +17,7 @@ public class ProductServiceImp implements IProductService {
         return productRepository.getAllProducts();
     }
 
+    public Optional<Product> getProductById(UUID id) {
+        return productRepository.getProductById(id);
+    }
 }

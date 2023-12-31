@@ -1,6 +1,8 @@
 package com.FCAI.SE.OrderifyPro.services;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,10 @@ public class OrderServiceImp implements IOrderService {
         return order;
     }
 
+    public void removeOrder(Order order) {
+        orderRepository.removeOrder(order);
+    }
+
 
 
     @Override
@@ -30,8 +36,12 @@ public class OrderServiceImp implements IOrderService {
 
 
 
-    
+    @Override
+    public Optional<Order> getOrderById(UUID id) {
+        return orderRepository.getOrderById(id);
+    }
 
+    
 
 
 }

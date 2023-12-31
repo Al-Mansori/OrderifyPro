@@ -3,13 +3,13 @@ package com.FCAI.SE.OrderifyPro.model;
 import java.util.UUID;
 
 public class Shipment {
+    private UUID id;
     private UUID orderId;
     private boolean isDelivered;
-    
-    
     private long time;
     
     public Shipment(UUID orderId) {
+        this.id = UUID.randomUUID();
         this.orderId = orderId;
         this.isDelivered = false;
         this.time = System.currentTimeMillis();
@@ -36,5 +36,9 @@ public class Shipment {
     
     public long getTime() {
         return time;
+    }
+
+    public UUID getId() {
+        return id;
     }       
 }

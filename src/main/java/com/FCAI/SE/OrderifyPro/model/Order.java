@@ -45,5 +45,6 @@ public abstract class Order {
 
     public abstract Map<UUID, Double> calculateCostPerUser();
     public abstract Map<UUID, Double> distributeShippingFee(Double shippingFee);
+    public abstract Map<UUID, Integer> getQuantityPerItem ();
 
 }

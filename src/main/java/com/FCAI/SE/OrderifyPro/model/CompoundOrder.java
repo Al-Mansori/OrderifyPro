@@ -17,7 +17,7 @@ public class CompoundOrder extends Order {
     public Map<UUID, Double> distributeShippingFee(Double shippingFee) {
         Map<UUID, Double> res = new HashMap<>();
         for (Order order : innerOrders) {
-            for (var entry : order.distributeShippingFee(shippingFee/innerOrders.size()).entrySet()) {
+            for (var entry : order.distributeShippingFee(shippingFee / innerOrders.size()).entrySet()) {
                 if (res.containsKey(entry.getKey())) {
                     res.replace(entry.getKey(), res.get(entry.getKey()) + entry.getValue());
                 } else {
@@ -42,6 +42,21 @@ public class CompoundOrder extends Order {
         }
 
         return res;
+    }
+
+    public Map<UUID, Integer> getQuantityPerItem() {
+        Map<UUID, Integer> res = new HashMap<>();
+        for (Order order : innerOrders) {
+            for (var entry : order.getQuantityPerItem().entrySet()) {
+                if (res.containsKey(entry.getKey())) {
+                    res.replace(entry.getKey(), res.get(entry.getKey()) + entry.getValue());
+                } else {
+                    res.put(entry.getKey(), entry.getValue());
+                }
+            }
+        }
+        return res;
+
     }
 
 }
