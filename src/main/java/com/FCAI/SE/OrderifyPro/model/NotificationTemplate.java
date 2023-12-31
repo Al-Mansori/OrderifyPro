@@ -5,17 +5,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 import java.util.UUID;
 
-class NotificationTemplate {
-  
-    private UUID id;// templateId
+public class NotificationTemplate {
+
+    // private UUID id;// templateId
 
     private String template;
+    private String language;
+    private String channel;
+
     // private String templateType;
     // private String templateContent;
 
-    private List<String> placeholders;
-    private List<String> availableLanguages;
-    private List<String> availableChannels;
+    // private List<String> placeholders;
+    // private List<String> availableLanguages;
+    // private List<String> availableChannels;
 
     // Constructors, getters, setters, etc.
 }
