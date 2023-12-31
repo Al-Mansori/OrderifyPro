@@ -8,9 +8,13 @@ import com.FCAI.SE.OrderifyPro.model.Order;
 
 @Repository
 public class OrderRepository {
-    public static List<Order> orders = new ArrayList<>();
+    public static List<Order> orders = new ArrayList<Order>();
 
     public void addOrder(Order order) {
         orders.add(order);
+    }
+
+    public List<Order> getAllOrders () {
+        return orders;
     }
 }

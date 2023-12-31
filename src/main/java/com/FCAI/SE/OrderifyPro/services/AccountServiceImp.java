@@ -1,5 +1,7 @@
 package com.FCAI.SE.OrderifyPro.services;
 
+import java.util.*;
+
 import org.springframework.stereotype.Service;
 
 import com.FCAI.SE.OrderifyPro.model.Account;
@@ -19,6 +21,10 @@ public class AccountServiceImp implements IAccountService {
             return account;
         }
         return null;
+    }
+
+    public Optional<Account> getUserByID (UUID userId) {
+        return accountRepository.getAccountById(userId);
     }
 
 }

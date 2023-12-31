@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class ProductRepository {
-        public static List<Product> products = new ArrayList<>();
+        public static List<Product> products = new ArrayList<Product>();
 
 
         public List<Product> getAllProducts () {

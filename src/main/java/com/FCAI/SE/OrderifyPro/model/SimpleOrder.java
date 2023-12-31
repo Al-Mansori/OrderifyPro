@@ -2,33 +2,38 @@ package com.FCAI.SE.OrderifyPro.model;
 
 import java.util.*;
 
-public class SimpleOrder extends Order{
-    private List<Product> products;
+public class SimpleOrder extends Order {
+    private List<OrderItem> items;
+    private String address;
 
-    public SimpleOrder(UUID accountId, List<Product> products) {
+    public SimpleOrder(UUID accountId, List<OrderItem> items, String address) {
         super(accountId);
-        this.products = Collections.unmodifiableList(products);
+        this.items = Collections.unmodifiableList(items);
+        this.address = address;
     }
 
-    // public boolean addProduct (Product product) {
-    //     return products.add(product);
-    // }
-
-
-
-    public List<Product> getProducts() {
-        return products;
+    public List<OrderItem> getItems() {
+        return items;
     }
 
-    // public void setProducts(List<Product> products) {
-    //     this.products = products;
-    // }
+    public String getAddress() {
+        return address;
+    }
 
-    // private String status;
-    // private String shippingAddress;
-    // private boolean isShipped;
-    // private double shippingFees;
+    public Map<UUID, Double> distributeShippingFee(Double shippingFee) {
+        Map<UUID, Double> res = new HashMap<>();
+        res.put(getAccountID(), shippingFee);
+        return res;
+    }
 
-    // Other order details, shipping info
-    
+    public Map<UUID, Double> calculateCostPerUser() {
+        double totalCost = 0;
+        for (OrderItem item : items) {
+            totalCost += (item.getQuantity() * item.getProduct().getDefinition().getPrice());
+        }
+
+        Map<UUID, Double> res = new HashMap<>();
+        res.put(getAccountID(), totalCost);
+        return res;
+    }
 }
