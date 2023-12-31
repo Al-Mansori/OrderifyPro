@@ -7,5 +7,5 @@ import com.FCAI.SE.OrderifyPro.model.Order;
 @Service
 
 public interface IOrderService {
-    public boolean addOrder(Order order);
+    public Order addOrder(Order order);
 }

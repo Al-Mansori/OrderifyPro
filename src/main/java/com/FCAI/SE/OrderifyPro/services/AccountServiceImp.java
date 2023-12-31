@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.FCAI.SE.OrderifyPro.model.Account;
 import com.FCAI.SE.OrderifyPro.repositories.AccountRepository;
 
-@Service
+@Service("AccountServiceImp")
 
 public class AccountServiceImp implements IAccountService {
 

@@ -5,14 +5,14 @@ import java.util.*;
 public class SimpleOrder extends Order{
     private List<Product> products;
 
-    public SimpleOrder(Account account, List<Product> products) {
-        super(UUID.randomUUID(), account);
-        this.products = products;
+    public SimpleOrder(UUID accountId, List<Product> products) {
+        super(accountId);
+        this.products = Collections.unmodifiableList(products);
     }
 
-    public boolean addProduct (Product product) {
-        return products.add(product);
-    }
+    // public boolean addProduct (Product product) {
+    //     return products.add(product);
+    // }
 
 
 
@@ -20,9 +20,9 @@ public class SimpleOrder extends Order{
         return products;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
+    // public void setProducts(List<Product> products) {
+    //     this.products = products;
+    // }
 
     // private String status;
     // private String shippingAddress;

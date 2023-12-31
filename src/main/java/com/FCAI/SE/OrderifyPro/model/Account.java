@@ -1,38 +1,55 @@
 package com.FCAI.SE.OrderifyPro.model;
 
+import java.util.UUID;
 
 public class Account {
 
-    // private String id;
-    // private List<Order> ordersPlaced;
-    private String email;
+    
+    private UUID id;
+    private String username;
     private String password;
-    private double accountBalance;
+    private double balance;
+    
+    // private List<Order> ordersPlaced;
+    
+    
+    // public Account(Account otherAccount) {
+    // id = UUID.randomUUID();
+    // this.username = otherAccount.username;
+    // this.password = otherAccount.password;
+    // this.balance = otherAccount.balance;
+    //}
+    
 
     public Account(String email, String password, double accountBalance) {
-        this.email = email;
+        id = UUID.randomUUID();
+        this.username = email;
         this.password = password;
-        this.accountBalance = accountBalance;
+        this.balance = accountBalance;
     }
 
-    public void setAccountBalance(double accountBalance) {
-        this.accountBalance = accountBalance;
+    public void setBalance(double accountBalance) {
+        this.balance = accountBalance;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String email) {
+        this.username = email;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public double getAccountBalance() {
-        return accountBalance;
+    public UUID getId() {
+        return id;
     }
 
-    public String getEmail() {
-        return email;
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {

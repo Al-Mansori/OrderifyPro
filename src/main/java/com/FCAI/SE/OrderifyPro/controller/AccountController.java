@@ -1,6 +1,7 @@
 package com.FCAI.SE.OrderifyPro.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,16 @@ public class AccountController {
     @Autowired
     IAccountService accountService;
 
+    
 
+
+    public AccountController(@Qualifier("AccountServiceImp") IAccountService accountService) {
+        this.accountService = accountService;
+    }
+
+
+
+    //test
     @PostMapping("/addAccount")
     public Account addAccount(@RequestBody Account account) {
         return accountService.addAccount(account);
